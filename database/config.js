@@ -16,8 +16,13 @@ const dbConnection = async() => {
         
 
     } catch (error) {
+        console.log('************** Inicio del mensaje de Error **************');
+        console.log('Error en la conección de la base de datos:');
+        console.log('');
         console.log(error);
+        console.log('************** Fin del mensaje de Error **************');
         throw new Error('Error en la base de datos - Hable con el admin');
+        
     }
 
 }

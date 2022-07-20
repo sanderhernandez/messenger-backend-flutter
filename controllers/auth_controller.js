@@ -68,7 +68,7 @@ const login = async(request, res = response) => {
         if (!usuarioDB) {
             return res.status(404).json({
                 ok: false,
-                msg: 'Credenciales incorrectas!'
+                msg: 'Credenciales incorrectas*******!'
             });
         }
 
@@ -79,10 +79,11 @@ const login = async(request, res = response) => {
         if (!validPassword) {
             return res.status(400).json({
                 ok: false,
-                msg: 'Credenciales incorrectas!'
+                msg: 'Credenciales incorrectas*******!'
             });
         }
 
+        //'Son Incorrecto el correo electrónico y la contraseña'
 
 
 
@@ -109,12 +110,14 @@ const login = async(request, res = response) => {
         });
         
     } catch (error) {
-        console.log(error);
+        console.log('Error****:', error);
         // Envia un json al usuario:
         res.status(500).json({
             ok: false,
             //body: request.body,
-            msg: 'Hable con el Administrador de sistemas'
+            err: error,
+            titulo: 'Informacion',
+            msg: 'Estamos trabajando en un inconveniente, pronto se restablecerá el servicio.'
         });
     }
 
